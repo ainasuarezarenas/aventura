@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="styles.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ayuda a encontrar al narco</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@700&display=swap"
+      rel="stylesheet"
+    />
+    <meta charset="UTF-8" />
+  </head>
+
+  <body>
+    <main style="color: whitesmoke">
+      <header>
+        <div id="pagines">Pagina 1/15</div>
+        <h1>Tria la teva aventura</h1>
+      </header>
+
+      <section class="section">
+        <p class="text">COMENÇA</p>
+        <div class="container">
+          <button onclick="ferSi()">Si</button>
+          <button onclick="ferNo()">No</button>
+        </div>
+      </section>
+    </main>
+
+    <script>
+      let historia = [
+        {
+          textNou:
+            "La última persona que lo vió, fue un pescador en el puerto. ¿Quieres seguir buscando?",
+          si: 1,
+          no: 6,
+        },
+        {
+          textNou:
+            "¡Genial! ¿te parece si tu empiezas por dentro del barco? ¡Si encuentras algo avísa!",
+          si: 2,
+          no: 0,
+        },
+        {
+          textNou: "Parece que dentro del barco no hay nada ¿salimos?",
+          si: 3,
+          no: 2,
+        },
+        {
+          textNou:
+            "Ahora que estamos fuera... ¿no te parece sospechosa esa caja de regalo?",
+          si: 4,
+          no: 6,
+        },
+        { textNou: "Que extraño, ¿La abrimos?", si: 5, no: 6 },
+        {
+          textNou:
+            "¡Oh! el narco se encuentra dentro, ¡gracias por ayudarnos a encontrarlo, ¿Te los has pasado bien?",
+          si: 5,
+          no: 6,
+        },
+        { textNou: "Venga pues pah tu casa" },
+      ];
+
+      let pagina = 0;
+
+      let textwebObject = document.querySelector(".text");
+      textwebObject.textContent = historia[pagina].textNou;
+
+      function ferSi() {
+        pagina = historia[pagina].si;
+        textwebObject.textContent = historia[pagina].textNou;
+      }
+      function ferNo() {
+        pagina = historia[pagina].no;
+        textwebObject.textContent = historia[pagina].textNou;
+      }
+    </script>
+  </body>
+</html>

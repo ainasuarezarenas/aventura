@@ -1,0 +1,49 @@
+.pageFooter:before {
+  content: counter(page) " of " counter(page);
+  left: 0;
+  top: 100%;
+  white-space: nowrap;
+  z-index: 20;
+  background-image: -moz-linear-gradient(top, #eeeeee, #cccccc);
+}
+
+body {
+  display: flex;
+  height: 1000px;
+  background-image: url("https://i2.wp.com/www.thexboxhub.com/wp-content/uploads/2020/07/family-mysteries-poisonous-promises-xbox.jpeg?fit=1399%2C787&ssl=1");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  max-width: 30rem;
+  margin: 0 auto;
+  font-family:'Noto Sans', sans-serif;
+}
+
+.text {
+  padding: 6em;
+  margin-bottom: 4em;
+  font-size: x-large;
+  font-family: 'Permanent Marker', cursive;
+  color:black; 
+}
+
+#pagines {
+  font-size: smaller;
+}
+
+.container {
+  text-align: center;
+  margin: auto;
+  border: 3px solid green;
+  height: 40px;
+  width: 218px;
+  left: 20px;
+  top: 20px;
+  bottom: 20px;
+}
+
+
+.section {
+  background-image: url("llibreta.png");
+
+}
