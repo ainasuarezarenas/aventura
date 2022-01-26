@@ -24,15 +24,22 @@
       <header>
         <div id="pagines">Pagina 1/15</div>
         <h1>Tria la teva aventura</h1>
+        <p>Activa l'audio per a una experiencia més realista</p>
+        <audio controls autoplay>
+          <source src="audio.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+        </audio>
       </header>
 
       <section class="section">
         <p class="text">COMENÇA</p>
-        <div class="container">
-          <button onclick="ferSi()">Si</button>
-          <button onclick="ferNo()">No</button>
+        <div class="text">
+          <button id="botonSi" onclick="ferSi()">Si</button>
+          <button id="botonNo" onclick="ferNo()">No</button>
+          <button id="botonFin" onclick="adeu()">Torna a jugar</button>
         </div>
       </section>
+
     </main>
 
     <script>
@@ -52,7 +59,7 @@
         {
           textNou: "Parece que dentro del barco no hay nada ¿salimos?",
           si: 3,
-          no: 2,
+          no: 1,
         },
         {
           textNou:
@@ -64,7 +71,7 @@
         {
           textNou:
             "¡Oh! el narco se encuentra dentro, ¡gracias por ayudarnos a encontrarlo, ¿Te los has pasado bien?",
-          si: 5,
+          si: 6,
           no: 6,
         },
         { textNou: "Venga pues pah tu casa" },
@@ -76,13 +83,37 @@
       textwebObject.textContent = historia[pagina].textNou;
 
       function ferSi() {
+        if (pagina === 5) {
+          canviBotons();
+        }
         pagina = historia[pagina].si;
         textwebObject.textContent = historia[pagina].textNou;
       }
+
       function ferNo() {
+        if (pagina === 5) {
+          canviBotons();
+        }
         pagina = historia[pagina].no;
         textwebObject.textContent = historia[pagina].textNou;
       }
+
+      function canviBotons() {
+
+        document.getElementById("botonFin").style.display="inline";
+        document.getElementById("botonNo").style.display="none";
+        document.getElementById("botonSi").style.display="none";
+
+      }
+
+      function adeu() {
+        pagina = 0;
+        textwebObject.textContent = historia[pagina].textNou;
+        document.getElementById("botonNo").style.display="inline";
+        document.getElementById("botonSi").style.display="inline";
+        document.getElementById("botonFin").style.display="none";
+      }
+
     </script>
   </body>
 </html>
