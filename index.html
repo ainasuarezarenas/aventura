@@ -63,11 +63,11 @@
         },
         {
           textNou:
-            "Ahora que estamos fuera... ¿no te parece sospechosa esa caja de regalo?",
+            "Ahora que estamos fuera... ¿no te parece sospechosa esa caja de regalo?", fons: 'url(https://www.esportmaniacos.com/wp-content/uploads/2021/12/valorant_bola_de_nieve.webp)',
           si: 4,
           no: 6,
         },
-        { textNou: "Que extraño, ¿La abrimos?", si: 5, no: 6 },
+        { textNou: "Que extraño, ¿La abrimos?", si: 5, no: 6, fons: 'url(https://www.esportmaniacos.com/wp-content/uploads/2021/12/valorant_bola_de_nieve.webp)', },
         {
           textNou:
             "¡Oh! el narco se encuentra dentro, ¡gracias por ayudarnos a encontrarlo, ¿Te los has pasado bien?",
@@ -82,20 +82,23 @@
       let textwebObject = document.querySelector(".text");
       textwebObject.textContent = historia[pagina].textNou;
 
+      
       function ferSi() {
-        if (pagina === 5) {
+        pagina = historia[pagina].si;
+        if (pagina === 6) {
           canviBotons();
         }
-        pagina = historia[pagina].si;
         textwebObject.textContent = historia[pagina].textNou;
+        document.body.style.backgroundImage = historia[pagina].fons;
       }
 
       function ferNo() {
-        if (pagina === 5) {
+        pagina = historia[pagina].no;
+        if (pagina === 6) {
           canviBotons();
         }
-        pagina = historia[pagina].no;
         textwebObject.textContent = historia[pagina].textNou;
+        document.body.style.backgroundImage = historia[pagina].fons;
       }
 
       function canviBotons() {
